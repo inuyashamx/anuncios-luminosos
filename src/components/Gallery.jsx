@@ -11,7 +11,6 @@ const projects = [
   { id: 5, image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (3).jpeg' },
   { id: 6, image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (4).jpeg' },
   { id: 7, image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (5).jpeg' },
-  { id: 8, image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (6).jpeg' },
   { id: 9, image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (7).jpeg' },
   { id: 10, image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (8).jpeg' },
   { id: 11, image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (9).jpeg' },
