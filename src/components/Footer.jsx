@@ -7,9 +7,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative py-12 px-6 border-t border-white/10">
+    <footer className="relative py-12 px-6 border-t border-gray-200 bg-white">
       {/* Gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E91E8C] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D91E6B] via-[#5AADE2] to-[#D4A832]" />
 
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center text-gray-500 text-sm">
-            <p>© 2026 MG Anuncios Luminosos & Publicidad.</p>
+            <p>2026 MG Anuncios Luminosos & Publicidad.</p>
             <p className="mt-1">Todos los derechos reservados</p>
           </div>
 
@@ -34,13 +34,15 @@ const Footer = () => {
               <motion.a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 whileHover={{
                   scale: 1.2,
-                  boxShadow: '0 0 20px #00B4D8',
+                  boxShadow: '0 4px 20px rgba(90, 173, 226, 0.3)',
                 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-full glass hover:border-[#00B4D8] transition-colors"
+                className="p-3 rounded-full bg-gray-100 hover:bg-[#5AADE2] hover:text-white transition-colors text-gray-600"
               >
                 <social.icon size={20} />
               </motion.a>
@@ -52,7 +54,7 @@ const Footer = () => {
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="text-center text-gray-600 text-xs mt-8"
+          className="text-center text-gray-400 text-xs mt-8"
         >
           Iluminamos tus ideas
         </motion.p>

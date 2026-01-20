@@ -17,7 +17,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Inicio', href: '#hero' },
     { name: 'Servicios', href: '#servicios' },
-    { name: 'Galería', href: '#galeria' },
+    { name: 'Galeria', href: '#galeria' },
     { name: 'Proceso', href: '#proceso' },
     { name: 'Contacto', href: '#contacto' },
   ];
@@ -28,7 +28,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass py-3' : 'bg-transparent py-6'
+        scrolled ? 'glass py-3 shadow-md' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -50,12 +50,12 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="relative text-gray-300 hover:text-white transition-colors font-medium"
+              className="relative text-gray-600 hover:text-[#D91E6B] transition-colors font-medium"
               whileHover={{ scale: 1.1 }}
             >
               {item.name}
               <motion.span
-                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223]"
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#D91E6B] via-[#5AADE2] to-[#D4A832]"
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
@@ -63,9 +63,9 @@ const Navbar = () => {
           ))}
           <motion.a
             href="#contacto"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 30px #E91E8C' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 4px 20px rgba(217, 30, 107, 0.3)' }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 rounded-full bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] font-semibold"
+            className="px-6 py-2 rounded-full bg-gradient-to-r from-[#D91E6B] via-[#5AADE2] to-[#D4A832] font-semibold text-white"
           >
             Cotizar
           </motion.a>
@@ -73,7 +73,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -87,7 +87,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass mt-4 mx-4 rounded-2xl overflow-hidden"
+            className="md:hidden glass mt-4 mx-4 rounded-2xl overflow-hidden shadow-lg"
           >
             <div className="p-6 flex flex-col gap-4">
               {navItems.map((item) => (
@@ -95,7 +95,7 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-white transition-colors font-medium text-lg"
+                  className="text-gray-700 hover:text-[#D91E6B] transition-colors font-medium text-lg"
                 >
                   {item.name}
                 </a>
@@ -103,7 +103,7 @@ const Navbar = () => {
               <a
                 href="#contacto"
                 onClick={() => setIsOpen(false)}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] font-semibold text-center"
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#D91E6B] via-[#5AADE2] to-[#D4A832] font-semibold text-center text-white"
               >
                 Cotizar
               </a>

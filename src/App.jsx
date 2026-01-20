@@ -33,33 +33,38 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white overflow-x-hidden">
+    <div className="bg-white min-h-screen text-gray-800 overflow-x-hidden">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] origin-left z-[100]"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D91E6B] via-[#5AADE2] to-[#D4A832] origin-left z-[100]"
         style={{ scaleX }}
       />
 
-      {/* Cursor glow effect - optional decorative */}
-      <div className="fixed inset-0 pointer-events-none z-[90]">
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#E91E8C]/5 blur-3xl animate-pulse"
+      {/* Decorative background elements */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute w-[600px] h-[600px] rounded-full bg-[#D91E6B]/5 blur-3xl"
           style={{
-            top: '20%',
-            left: '10%',
+            top: '10%',
+            left: '-10%',
           }}
         />
-        <div className="absolute w-[400px] h-[400px] rounded-full bg-[#00B4D8]/5 blur-3xl animate-pulse"
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#5AADE2]/5 blur-3xl"
           style={{
-            top: '60%',
-            right: '10%',
-            animationDelay: '1s',
+            top: '50%',
+            right: '-10%',
+          }}
+        />
+        <div className="absolute w-[400px] h-[400px] rounded-full bg-[#D4A832]/5 blur-3xl"
+          style={{
+            bottom: '10%',
+            left: '30%',
           }}
         />
       </div>
 
       <Navbar />
 
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Services />
         <Gallery />

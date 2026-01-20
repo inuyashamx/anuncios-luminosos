@@ -14,8 +14,8 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0a0a;
-  color: white;
+  background-color: #ffffff;
+  color: #1a1a1a;
   overflow-x: hidden;
 }
 
@@ -23,69 +23,63 @@ body {
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Neon Text Effects - MG Brand Colors */
-.neon-text {
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #E91E8C,
-    0 0 40px #E91E8C,
-    0 0 80px #E91E8C;
+/* MG Brand Colors - Light Theme */
+/* Rosa/Magenta: #D91E6B */
+/* Azul: #5AADE2 */
+/* Amarillo/Dorado: #D4A832 */
+
+/* Text accent colors */
+.text-mg-pink {
+  color: #D91E6B;
 }
 
-.neon-text-blue {
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #00B4D8,
-    0 0 40px #00B4D8,
-    0 0 80px #00B4D8;
+.text-mg-blue {
+  color: #5AADE2;
 }
 
-.neon-text-yellow {
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #F4B223,
-    0 0 40px #F4B223,
-    0 0 80px #F4B223;
-}
-
-/* Neon Border - MG Brand */
-.neon-border {
-  box-shadow:
-    0 0 5px #E91E8C,
-    0 0 10px #E91E8C,
-    0 0 20px #E91E8C,
-    inset 0 0 5px #E91E8C,
-    inset 0 0 10px #E91E8C;
-  border: 2px solid #E91E8C;
-}
-
-.neon-border-blue {
-  box-shadow:
-    0 0 5px #00B4D8,
-    0 0 10px #00B4D8,
-    0 0 20px #00B4D8,
-    inset 0 0 5px #00B4D8,
-    inset 0 0 10px #00B4D8;
-  border: 2px solid #00B4D8;
+.text-mg-yellow {
+  color: #D4A832;
 }
 
 /* Gradient backgrounds - MG Brand */
 .gradient-bg {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
 }
 
 .gradient-mg {
-  background: linear-gradient(135deg, #E91E8C 0%, #00B4D8 50%, #F4B223 100%);
+  background: linear-gradient(135deg, #D91E6B 0%, #5AADE2 50%, #D4A832 100%);
 }
 
-/* Glass effect */
+.gradient-mg-text {
+  background: linear-gradient(135deg, #D91E6B 0%, #5AADE2 50%, #D4A832 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect - Light theme */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card style */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(217, 30, 107, 0.15);
 }
 
 /* Custom scrollbar */
@@ -94,11 +88,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #E91E8C, #00B4D8, #F4B223);
+  background: linear-gradient(135deg, #D91E6B, #5AADE2, #D4A832);
   border-radius: 4px;
 }
 
@@ -116,14 +110,64 @@ body {
 }
 
 .animated-border {
-  background: linear-gradient(90deg, #E91E8C, #00B4D8, #F4B223, #E91E8C);
+  background: linear-gradient(90deg, #D91E6B, #5AADE2, #D4A832, #D91E6B);
   background-size: 200% 200%;
   animation: gradient-rotate 3s ease infinite;
 }
 
-/* Particle effect base */
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #D91E6B 0%, #5AADE2 100%);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 20px rgba(217, 30, 107, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #D91E6B;
+  color: #D91E6B;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #D91E6B;
+  color: white;
+}
+
+/* Section backgrounds */
+.section-light {
+  background: #ffffff;
+}
+
+.section-alt {
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* Input styles for light theme */
+.input-light {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #1a1a1a;
+}
+
+.input-light:focus {
+  border-color: #D91E6B;
+  box-shadow: 0 0 0 3px rgba(217, 30, 107, 0.1);
+}
+
+.input-light::placeholder {
+  color: #6c757d;
+}
+
+/* Select option styles */
+.select-option {
+  background: #ffffff;
+  color: #1a1a1a;
 }
