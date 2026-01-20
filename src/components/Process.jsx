@@ -48,8 +48,8 @@ const Process = () => {
       className="py-24 px-6 relative overflow-hidden"
     >
       {/* Background glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#ff00ff]/10 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#00ffff]/10 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#E91E8C]/10 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-[#00B4D8]/10 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
@@ -73,7 +73,7 @@ const Process = () => {
         {/* Process Steps */}
         <div className="relative">
           {/* Connection line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#ff00ff] via-[#00ffff] to-[#ff00ff] -translate-y-1/2 hidden lg:block" />
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] -translate-y-1/2 hidden lg:block" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {steps.map((step, index) => (
@@ -93,7 +93,7 @@ const Process = () => {
                     initial={{ scale: 0 }}
                     animate={inView ? { scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
-                    className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-[#ff00ff] to-[#00ffff] flex items-center justify-center font-bold text-sm"
+                    className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] flex items-center justify-center font-bold text-sm"
                   >
                     {index + 1}
                   </motion.div>
@@ -147,7 +147,7 @@ const Process = () => {
         >
           <motion.a
             href="#contacto"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 40px #00ffff' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 0 40px #00B4D8' }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-8 py-4 rounded-full neon-border-blue font-bold text-lg"
           >

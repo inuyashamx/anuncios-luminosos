@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -17,24 +17,28 @@ const Contact = () => {
     mensaje: '',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('¡Mensaje enviado! Te contactaremos pronto.');
-      setFormData({ nombre: '', email: '', telefono: '', servicio: '', mensaje: '' });
-    }, 2000);
+
+    const mensaje = `¡Hola! Me contacto desde la web de MG Anuncios.
+
+*Nombre:* ${formData.nombre}
+*Email:* ${formData.email}
+*Teléfono:* ${formData.telefono || 'No proporcionado'}
+*Servicio de interés:* ${formData.servicio || 'No especificado'}
+
+*Mensaje:*
+${formData.mensaje}`;
+
+    const whatsappUrl = `https://wa.me/5219982401172?text=${encodeURIComponent(mensaje)}`;
+    window.open(whatsappUrl, '_blank');
+
+    setFormData({ nombre: '', email: '', telefono: '', servicio: '', mensaje: '' });
   };
 
   const contactInfo = [
-    { icon: Phone, label: 'Teléfono', value: '+52 123 456 7890' },
-    { icon: Mail, label: 'Email', value: 'info@neonsign.com' },
-    { icon: MapPin, label: 'Ubicación', value: 'Ciudad de México, MX' },
-    { icon: Clock, label: 'Horario', value: 'Lun - Sáb: 9am - 7pm' },
+    { icon: Phone, label: 'Teléfono', value: '+52 1 998 240 1172', href: 'tel:+5219982401172' },
+    { icon: Mail, label: 'Email', value: 'mganunciosluminososcancun@gmail.com', href: 'mailto:mganunciosluminososcancun@gmail.com' },
   ];
 
   return (
@@ -45,8 +49,8 @@ const Contact = () => {
     >
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#ff00ff]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00ffff]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#E91E8C]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00B4D8]/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -82,12 +86,12 @@ const Contact = () => {
                     Nombre *
                   </label>
                   <motion.input
-                    whileFocus={{ boxShadow: '0 0 20px rgba(255,0,255,0.3)' }}
+                    whileFocus={{ boxShadow: '0 0 20px rgba(233,30,140,0.3)' }}
                     type="text"
                     required
                     value={formData.nombre}
                     onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#ff00ff] transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#E91E8C] transition-colors"
                     placeholder="Tu nombre"
                   />
                 </div>
@@ -96,12 +100,12 @@ const Contact = () => {
                     Email *
                   </label>
                   <motion.input
-                    whileFocus={{ boxShadow: '0 0 20px rgba(255,0,255,0.3)' }}
+                    whileFocus={{ boxShadow: '0 0 20px rgba(233,30,140,0.3)' }}
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#ff00ff] transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#E91E8C] transition-colors"
                     placeholder="tu@email.com"
                   />
                 </div>
@@ -113,11 +117,11 @@ const Contact = () => {
                     Teléfono
                   </label>
                   <motion.input
-                    whileFocus={{ boxShadow: '0 0 20px rgba(255,0,255,0.3)' }}
+                    whileFocus={{ boxShadow: '0 0 20px rgba(233,30,140,0.3)' }}
                     type="tel"
                     value={formData.telefono}
                     onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#ff00ff] transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#E91E8C] transition-colors"
                     placeholder="+52 123 456 7890"
                   />
                 </div>
@@ -126,16 +130,20 @@ const Contact = () => {
                     Servicio de interés
                   </label>
                   <motion.select
-                    whileFocus={{ boxShadow: '0 0 20px rgba(255,0,255,0.3)' }}
+                    whileFocus={{ boxShadow: '0 0 20px rgba(233,30,140,0.3)' }}
                     value={formData.servicio}
                     onChange={(e) => setFormData({ ...formData, servicio: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#ff00ff] transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#E91E8C] transition-colors"
                   >
                     <option value="" className="bg-[#0a0a0a]">Selecciona...</option>
-                    <option value="neones" className="bg-[#0a0a0a]">Neones LED</option>
                     <option value="letras3d" className="bg-[#0a0a0a]">Letras 3D</option>
+                    <option value="neonflex" className="bg-[#0a0a0a]">Neón Flex</option>
                     <option value="cajas" className="bg-[#0a0a0a]">Cajas de Luz</option>
-                    <option value="rotulos" className="bg-[#0a0a0a]">Rótulos LED</option>
+                    <option value="letras2d" className="bg-[#0a0a0a]">Letras 2D</option>
+                    <option value="impresion" className="bg-[#0a0a0a]">Impresión</option>
+                    <option value="estructuras" className="bg-[#0a0a0a]">Estructuras</option>
+                    <option value="cnclaser" className="bg-[#0a0a0a]">CNC / Láser</option>
+                    <option value="promocionales" className="bg-[#0a0a0a]">Promocionales</option>
                     <option value="otro" className="bg-[#0a0a0a]">Otro</option>
                   </motion.select>
                 </div>
@@ -146,35 +154,24 @@ const Contact = () => {
                   Mensaje *
                 </label>
                 <motion.textarea
-                  whileFocus={{ boxShadow: '0 0 20px rgba(255,0,255,0.3)' }}
+                  whileFocus={{ boxShadow: '0 0 20px rgba(233,30,140,0.3)' }}
                   required
                   rows={4}
                   value={formData.mensaje}
                   onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#ff00ff] transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-[#E91E8C] transition-colors resize-none"
                   placeholder="Cuéntanos sobre tu proyecto..."
                 />
               </div>
 
               <motion.button
                 type="submit"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.02, boxShadow: '0 0 40px #ff00ff' }}
+                whileHover={{ scale: 1.02, boxShadow: '0 0 40px #E91E8C' }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#ff00ff] to-[#00ffff] font-bold text-lg flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] font-bold text-lg flex items-center justify-center gap-2"
               >
-                {isSubmitting ? (
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    className="w-6 h-6 border-2 border-white border-t-transparent rounded-full"
-                  />
-                ) : (
-                  <>
-                    <Send size={20} />
-                    Enviar Mensaje
-                  </>
-                )}
+                <MessageCircle size={20} />
+                Enviar por WhatsApp
               </motion.button>
             </form>
           </motion.div>
@@ -189,24 +186,25 @@ const Contact = () => {
             {/* Info Cards */}
             <div className="grid grid-cols-2 gap-4">
               {contactInfo.map((info, index) => (
-                <motion.div
+                <motion.a
                   key={index}
+                  href={info.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="glass rounded-2xl p-6"
+                  className="glass rounded-2xl p-6 cursor-pointer hover:border-[#00B4D8] transition-colors"
                 >
-                  <info.icon className="text-[#00ffff] mb-3" size={24} />
+                  <info.icon className="text-[#00B4D8] mb-3" size={24} />
                   <p className="text-gray-400 text-sm">{info.label}</p>
-                  <p className="font-medium">{info.value}</p>
-                </motion.div>
+                  <p className="font-medium text-sm break-all">{info.value}</p>
+                </motion.a>
               ))}
             </div>
 
             {/* WhatsApp CTA */}
             <motion.a
-              href="https://wa.me/521234567890"
+              href="https://wa.me/5219982401172"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
@@ -231,41 +229,19 @@ const Contact = () => {
               </div>
             </motion.a>
 
-            {/* Map placeholder */}
-            <motion.div
+            {/* Second Email */}
+            <motion.a
+              href="mailto:mgedgarmadrid@gmail.com"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="relative rounded-2xl overflow-hidden h-64"
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="block glass rounded-2xl p-6 cursor-pointer hover:border-[#E91E8C] transition-colors"
             >
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    boxShadow: [
-                      '0 0 20px #ff00ff',
-                      '0 0 40px #ff00ff',
-                      '0 0 20px #ff00ff',
-                    ],
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="w-6 h-6 rounded-full bg-[#ff00ff]"
-                />
-              </div>
-              <div className="absolute bottom-4 left-4">
-                <p className="font-display font-bold">CDMX, México</p>
-                <p className="text-gray-400 text-sm">Entregas a todo el país</p>
-              </div>
-            </motion.div>
+              <Mail className="text-[#E91E8C] mb-3" size={24} />
+              <p className="text-gray-400 text-sm">Email alternativo</p>
+              <p className="font-medium text-sm break-all">mgedgarmadrid@gmail.com</p>
+            </motion.a>
           </motion.div>
         </div>
       </div>

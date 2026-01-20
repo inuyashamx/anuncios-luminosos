@@ -36,19 +36,19 @@ function App() {
     <div className="bg-[#0a0a0a] min-h-screen text-white overflow-x-hidden">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff00ff] via-[#00ffff] to-[#ff00ff] origin-left z-[100]"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] origin-left z-[100]"
         style={{ scaleX }}
       />
 
       {/* Cursor glow effect - optional decorative */}
       <div className="fixed inset-0 pointer-events-none z-[90]">
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#ff00ff]/5 blur-3xl animate-pulse"
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-[#E91E8C]/5 blur-3xl animate-pulse"
           style={{
             top: '20%',
             left: '10%',
           }}
         />
-        <div className="absolute w-[400px] h-[400px] rounded-full bg-[#00ffff]/5 blur-3xl animate-pulse"
+        <div className="absolute w-[400px] h-[400px] rounded-full bg-[#00B4D8]/5 blur-3xl animate-pulse"
           style={{
             top: '60%',
             right: '10%',

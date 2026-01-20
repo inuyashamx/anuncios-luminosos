@@ -1,35 +1,31 @@
 import { motion } from 'framer-motion';
-import { Zap, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Facebook } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Youtube, href: '#', label: 'Youtube' },
+    { icon: Facebook, href: 'https://www.facebook.com/MGAnunciosLuminosos', label: 'Facebook' },
   ];
 
   return (
     <footer className="relative py-12 px-6 border-t border-white/10">
       {/* Gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#ff00ff] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E91E8C] to-transparent" />
 
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
           <motion.a
             href="#hero"
-            className="flex items-center gap-2 font-display text-xl font-bold justify-center md:justify-start"
+            className="flex items-center gap-2 justify-center md:justify-start"
             whileHover={{ scale: 1.05 }}
           >
-            <Zap className="text-[#ff00ff]" size={28} />
-            <span className="neon-text">NEONSIGN</span>
+            <img src="/Logo.png" alt="MG Anuncios Luminosos" className="h-10 w-auto" />
           </motion.a>
 
           {/* Copyright */}
           <div className="text-center text-gray-500 text-sm">
-            <p>© 2024 NeonSign Studio. Todos los derechos reservados.</p>
-            <p className="mt-1">Hecho con pasión en México</p>
+            <p>© 2026 MG Anuncios Luminosos & Publicidad.</p>
+            <p className="mt-1">Todos los derechos reservados</p>
           </div>
 
           {/* Social Links */}
@@ -41,10 +37,10 @@ const Footer = () => {
                 aria-label={social.label}
                 whileHover={{
                   scale: 1.2,
-                  boxShadow: '0 0 20px #00ffff',
+                  boxShadow: '0 0 20px #00B4D8',
                 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-full glass hover:border-[#00ffff] transition-colors"
+                className="p-3 rounded-full glass hover:border-[#00B4D8] transition-colors"
               >
                 <social.icon size={20} />
               </motion.a>
@@ -58,7 +54,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           className="text-center text-gray-600 text-xs mt-8"
         >
-          Iluminamos tus ideas desde 2014
+          Iluminamos tus ideas
         </motion.p>
       </div>
     </footer>

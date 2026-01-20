@@ -1,49 +1,63 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Lightbulb, Box, Zap, Sun, PenTool, Layers } from 'lucide-react';
+import { Box, Sun, Zap, Layers, Printer, Wrench, Scissors, Sparkles } from 'lucide-react';
 
 const services = [
   {
-    icon: Lightbulb,
-    title: 'Neones LED',
-    description: 'Letreros de neón modernos con tecnología LED. Diseños personalizados con infinidad de colores.',
-    image: 'https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=600',
-    color: '#ff00ff',
-  },
-  {
     icon: Box,
     title: 'Letras 3D',
-    description: 'Letras corpóreas en acero, aluminio, acrílico y PVC. Con o sin iluminación interior.',
-    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600',
-    color: '#00ffff',
+    description: 'Fabricación de letras en lámina, acrílico y MDF con módulos LED. Acabados en pintura, rotulación tipo madera y más.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (3).jpeg',
+    color: '#E91E8C',
+  },
+  {
+    icon: Zap,
+    title: 'Neón Flex',
+    description: 'Letreros neón flex sobre base de acrílico o triplay. Diseños personalizados a una o varias líneas con múltiples colores.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.42 (2).jpeg',
+    color: '#00B4D8',
   },
   {
     icon: Sun,
     title: 'Cajas de Luz',
-    description: 'Cajas luminosas de alto impacto visual. Ideales para fachadas y exteriores.',
-    image: 'https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=600',
-    color: '#ff6600',
-  },
-  {
-    icon: Zap,
-    title: 'Rótulos LED',
-    description: 'Pantallas y rótulos con tecnología LED de última generación. Programables y dinámicos.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600',
-    color: '#00ff00',
-  },
-  {
-    icon: PenTool,
-    title: 'Diseño Gráfico',
-    description: 'Creamos el diseño perfecto para tu marca. Desde el concepto hasta la instalación.',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600',
-    color: '#ffff00',
+    description: 'Cajas de luz con estructura de PTR, frentes de acrílico o lona. Rotuladas en vinil con módulos LED internos.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.41 (5).jpeg',
+    color: '#F4B223',
   },
   {
     icon: Layers,
-    title: 'Viniles y Lonas',
-    description: 'Impresión de gran formato en vinil, lona y materiales especiales. Alta resolución.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
-    color: '#ff00ff',
+    title: 'Letras 2D',
+    description: 'Logotipos en MDF, lámina, trovisel o alucobond. Con acabados en barniz, pintura o rotulación y módulos LED al reverso.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.11.42 (4).jpeg',
+    color: '#E91E8C',
+  },
+  {
+    icon: Printer,
+    title: 'Impresión',
+    description: 'Impresión en viniles (mate, brillante, microperforado), lonas y canvas. Impresión directa en PVC, trovisel y aluminio.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.20.19 (5).jpeg',
+    color: '#00B4D8',
+  },
+  {
+    icon: Wrench,
+    title: 'Estructuras',
+    description: 'Fabricación de toldos, cortinas de lona, estructuras para anuncios con PTR y soldaduras personalizadas.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.20.19 (2).jpeg',
+    color: '#F4B223',
+  },
+  {
+    icon: Scissors,
+    title: 'CNC y Láser',
+    description: 'Cortes CNC en alucobond, trovisel, madera y lámina. Grabado láser personalizado en múltiples materiales.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.20.19 (8).jpeg',
+    color: '#E91E8C',
+  },
+  {
+    icon: Sparkles,
+    title: 'Promocionales',
+    description: 'Serigrafía textil, bordado en gorras, credenciales PVC, señaléticas, totems y objetos personalizados.',
+    image: '/Fotos/WhatsApp Image 2026-01-19 at 18.20.19 (10).jpeg',
+    color: '#00B4D8',
   },
 ];
 
@@ -80,7 +94,7 @@ const Services = () => {
       className="py-24 px-6 relative overflow-hidden"
     >
       {/* Background effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[#ff00ff]/5 blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-[#E91E8C]/5 blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -148,7 +162,7 @@ const Services = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="font-display text-xl font-bold mb-3 group-hover:text-[#00ffff] transition-colors">
+                <h3 className="font-display text-xl font-bold mb-3 group-hover:text-[#00B4D8] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">

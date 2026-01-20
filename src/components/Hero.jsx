@@ -50,7 +50,7 @@ const Hero = () => {
       {[...Array(20)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 rounded-full bg-[#ff00ff]"
+          className="absolute w-2 h-2 rounded-full bg-[#E91E8C]"
           initial={{
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight,
@@ -66,7 +66,7 @@ const Hero = () => {
             delay: Math.random() * 2,
           }}
           style={{
-            boxShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff',
+            boxShadow: '0 0 10px #E91E8C, 0 0 20px #E91E8C',
           }}
         />
       ))}
@@ -84,7 +84,7 @@ const Hero = () => {
         >
           <Sparkles className="text-[#00ffff]" />
           <span className="text-[#00ffff] font-medium tracking-widest uppercase">
-            Iluminamos tus ideas
+            MG Anuncios Luminosos & Publicidad
           </span>
           <Sparkles className="text-[#00ffff]" />
         </motion.div>
@@ -94,7 +94,7 @@ const Hero = () => {
           className="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6"
         >
           <span className="block neon-text">ANUNCIOS</span>
-          <span className="block mt-2 bg-gradient-to-r from-[#ff00ff] via-[#00ffff] to-[#ff00ff] bg-clip-text text-transparent">
+          <span className="block mt-2 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] bg-clip-text text-transparent">
             LUMINOSOS
           </span>
         </motion.h1>
@@ -103,7 +103,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
         >
-          Letras 3D, neones LED, cajas de luz y más.
+          Letras 3D, Neón Flex, Cajas de Luz, Impresión, CNC y más.
           <span className="text-white font-semibold"> Hacemos brillar tu negocio.</span>
         </motion.p>
 
@@ -113,9 +113,9 @@ const Hero = () => {
         >
           <motion.a
             href="#contacto"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 40px #ff00ff' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 0 40px #E91E8C' }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-[#ff00ff] to-[#ff00ff] font-bold text-lg neon-border"
+            className="px-8 py-4 rounded-full bg-gradient-to-r from-[#E91E8C] to-[#00B4D8] font-bold text-lg neon-border"
           >
             Solicitar Cotización
           </motion.a>
@@ -123,7 +123,7 @@ const Hero = () => {
             href="#galeria"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full border-2 border-white/30 font-bold text-lg hover:border-[#00ffff] hover:text-[#00ffff] transition-colors"
+            className="px-8 py-4 rounded-full border-2 border-white/30 font-bold text-lg hover:border-[#00B4D8] hover:text-[#00B4D8] transition-colors"
           >
             Ver Trabajos
           </motion.a>

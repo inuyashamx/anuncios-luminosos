@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,12 +34,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <motion.a
           href="#hero"
-          className="flex items-center gap-2 font-display text-2xl font-bold"
+          className="flex items-center gap-2"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Zap className="text-[#ff00ff]" size={32} />
-          <span className="neon-text">NEONSIGN</span>
+          <img src="/Logo.png" alt="MG Anuncios Luminosos" className="h-12 w-auto" />
         </motion.a>
 
         {/* Desktop Menu */}
@@ -56,7 +55,7 @@ const Navbar = () => {
             >
               {item.name}
               <motion.span
-                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ff00ff] to-[#00ffff]"
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223]"
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
@@ -64,9 +63,9 @@ const Navbar = () => {
           ))}
           <motion.a
             href="#contacto"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 30px #ff00ff' }}
+            whileHover={{ scale: 1.05, boxShadow: '0 0 30px #E91E8C' }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 rounded-full bg-gradient-to-r from-[#ff00ff] to-[#00ffff] font-semibold"
+            className="px-6 py-2 rounded-full bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] font-semibold"
           >
             Cotizar
           </motion.a>
@@ -104,7 +103,7 @@ const Navbar = () => {
               <a
                 href="#contacto"
                 onClick={() => setIsOpen(false)}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#ff00ff] to-[#00ffff] font-semibold text-center"
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] font-semibold text-center"
               >
                 Cotizar
               </a>
