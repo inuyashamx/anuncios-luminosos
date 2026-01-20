@@ -80,7 +80,7 @@ const Hero = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6"
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6 mt-32"
         >
           <span className="block neon-text">MG ANUNCIOS</span>
           <span className="block mt-2 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] bg-clip-text text-transparent">
