@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -78,22 +78,11 @@ const Hero = () => {
         animate={inView ? 'visible' : 'hidden'}
         className="relative z-10 text-center px-6 max-w-5xl"
       >
-        <motion.div
-          variants={itemVariants}
-          className="flex items-center justify-center gap-2 mb-6"
-        >
-          <Sparkles className="text-[#00ffff]" />
-          <span className="text-[#00ffff] font-medium tracking-widest uppercase">
-            MG Anuncios Luminosos & Publicidad
-          </span>
-          <Sparkles className="text-[#00ffff]" />
-        </motion.div>
-
         <motion.h1
           variants={itemVariants}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-black mb-6"
         >
-          <span className="block neon-text">ANUNCIOS</span>
+          <span className="block neon-text">MG ANUNCIOS</span>
           <span className="block mt-2 bg-gradient-to-r from-[#E91E8C] via-[#00B4D8] to-[#F4B223] bg-clip-text text-transparent">
             LUMINOSOS
           </span>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Phone, Mail, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Facebook } from 'lucide-react';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -224,6 +224,33 @@ ${formData.mensaje}`;
                   </h3>
                   <p className="text-gray-400 text-sm">
                     Respuesta inmediata en horario laboral
+                  </p>
+                </div>
+              </div>
+            </motion.a>
+
+            {/* Facebook CTA */}
+            <motion.a
+              href="https://www.facebook.com/MGAnunciosLuminosos"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="block glass rounded-2xl p-6 border border-blue-500/30 hover:border-blue-500 transition-colors group"
+            >
+              <div className="flex items-center gap-4">
+                <motion.div
+                  whileHover={{ rotate: 15 }}
+                  className="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center"
+                >
+                  <Facebook className="text-blue-500" size={28} />
+                </motion.div>
+                <div>
+                  <h3 className="font-display font-bold text-lg group-hover:text-blue-400 transition-colors">
+                    Facebook
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Síguenos y mira más trabajos
                   </p>
                 </div>
               </div>
